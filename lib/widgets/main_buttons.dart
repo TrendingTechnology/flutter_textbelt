@@ -27,7 +27,7 @@ class MainButtons extends StatelessWidget {
           borderRadius: BorderRadius.circular(35),
         ),
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 18, horizontal: 40),
+          padding: const EdgeInsets.symmetric(vertical: 18, horizontal: 40),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -37,7 +37,7 @@ class MainButtons extends StatelessWidget {
                 child: Text(
                   label,
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 18),
+                  style: const TextStyle(fontSize: 18),
                 ),
               ),
             ],

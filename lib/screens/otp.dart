@@ -45,14 +45,14 @@ class _OTPState extends State<OTP> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
-          "Authenticate with Mobile Number",
+        title: const Text(
+          "Authenticate with Mobile",
           style: TextStyle(color: Colors.black),
         ),
         backgroundColor: Colors.white,
         elevation: 0,
         foregroundColor: Colors.black,
-        iconTheme: IconThemeData(color: Colors.black),
+        iconTheme: const IconThemeData(color: Colors.black),
       ),
       body: SafeArea(
         child: Container(
@@ -127,14 +127,17 @@ class _OTPState extends State<OTP> {
                           Icons.phone,
                           color: Colors.black,
                         ),
-                        prefix: Text("+1"),
+                        prefix: Padding(
+                          padding: EdgeInsets.only(right: 8.0),
+                          child: Text("+91"),
+                        ),
                         hintStyle: TextStyle(
                           fontSize: 25,
                           color: Color.fromARGB(255, 200, 200, 200),
                         ),
                       ),
                     ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               ElevatedButton(
@@ -174,7 +177,6 @@ class _OTPState extends State<OTP> {
                                     userId: _userId)
                                 .then((value) {
                               if (value["success"]) {
-                                _isButton = false;
                                 _insertOtp = true;
                                 Fluttertoast.showToast(msg: "Otp Sent");
                               } else {
@@ -184,21 +186,22 @@ class _OTPState extends State<OTP> {
                             });
                             _mobController.text = "";
                             setState(() {
+                              _isButton = false;
                               _isLoading = false;
                             });
                           }
                     : null,
                 style: ButtonStyle(
                   padding: _isLoading
-                      ? MaterialStateProperty.all(EdgeInsets.all(25))
+                      ? MaterialStateProperty.all(const EdgeInsets.all(25))
                       : MaterialStateProperty.all(
-                          EdgeInsets.symmetric(horizontal: 25, vertical: 5)),
+                          const EdgeInsets.symmetric(horizontal: 25, vertical: 5)),
                   backgroundColor: _isButton
                       ? MaterialStateProperty.all(
                           Colors.lightBlue,
                         )
                       : MaterialStateProperty.all(
-                          Color.fromARGB(125, 225, 225, 225),
+                          const Color.fromARGB(125, 225, 225, 225),
                         ),
                   shape: MaterialStateProperty.all(
                     RoundedRectangleBorder(
@@ -207,12 +210,12 @@ class _OTPState extends State<OTP> {
                   ),
                 ),
                 child: _isLoading
-                    ? CircularProgressIndicator(
+                    ? const CircularProgressIndicator(
                         color: Colors.white,
                       )
                     : Text(
                         _insertOtp ? "Verify OTP" : "Send OTP",
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 20),
                       ),
               ),

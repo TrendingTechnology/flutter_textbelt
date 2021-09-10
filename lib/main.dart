@@ -5,7 +5,7 @@ import '../screens/login.dart';
 
 void main() async {
   await dotenv.load(fileName: "lib/.env");
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -14,12 +14,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Textbelt",
+      title: "Text Belt",
       theme: ThemeData(
         primarySwatch: Colors.blue,
         canvasColor: Colors.white
       ),
-      home: Login(),
+      home: const Login(),
     );
   }
 }

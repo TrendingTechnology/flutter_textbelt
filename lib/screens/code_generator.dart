@@ -16,7 +16,7 @@ class _CodeGeneratorState extends State<CodeGenerator> {
   int currentTimer = 30;
   String currentTimerToDisplay = "";
   void timer() {
-    x = Timer.periodic(Duration(seconds: 1), (Timer t) {
+    x = Timer.periodic(const Duration(seconds: 1), (Timer t) {
       if (mounted) {
         currentTimerToDisplay =
             (currentTimer < 10 ? "0" : "").toString() + currentTimer.toString();
@@ -50,17 +50,17 @@ class _CodeGeneratorState extends State<CodeGenerator> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
+        title: const Text(
           "Authenticate with Code",
           style: TextStyle(color: Colors.black),
         ),
         backgroundColor: Colors.white,
         elevation: 0,
         foregroundColor: Colors.black,
-        iconTheme: IconThemeData(color: Colors.black),
+        iconTheme: const IconThemeData(color: Colors.black),
       ),
       body: SafeArea(
-        child: Container(
+        child: SizedBox(
           width: double.infinity,
           height: double.infinity,
           child: Column(
@@ -69,14 +69,16 @@ class _CodeGeneratorState extends State<CodeGenerator> {
             children: [
               Text(
                 _secretCode.toString(),
-                style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Text(
                 currentTimerToDisplay,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
             ],
           ),

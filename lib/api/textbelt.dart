@@ -28,7 +28,6 @@ class TextBelt {
     } on SocketException {
       return {"success": false, "msg": "No Internet connection 😑"};
     } catch (e) {
-      print(e);
       return {"success": false, "msg": "Connection Error 😑"};
     }
   }
@@ -53,7 +52,6 @@ class TextBelt {
     } on SocketException {
       return {"success": false, "isValidOtp": "No Internet connection 😑"};
     } catch (e) {
-      print(e);
       return {"success": false, "isValidOtp": "Connection Error 😑"};
     }
   }

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_textbelt/screens/otp.dart';
-import 'package:flutter_textbelt/widgets/mainButtons.dart';
+import 'package:flutter_textbelt/widgets/main_buttons.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-import 'codeGenerator.dart';
-import 'googleHome.dart';
+import 'code_generator.dart';
+import 'google_home.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -14,24 +14,24 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  GoogleSignIn _googleSignIN = GoogleSignIn();
+  final GoogleSignIn _googleSignIN = GoogleSignIn();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: Container(
+          child: SizedBox(
         width: double.infinity,
         height: double.infinity,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               'Authenticator',
               style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 25,
             ),
             MainButtons(
@@ -46,29 +46,29 @@ class _LoginState extends State<Login> {
                               )));
                 });
               },
-              icon: Icon(Icons.login),
+              icon: const Icon(Icons.login),
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             MainButtons(
               label: "With OTP",
               onPress: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (builder) => OTP()));
+                    context, MaterialPageRoute(builder: (builder) => const OTP()));
               },
-              icon: Icon(Icons.phone),
+              icon: const Icon(Icons.phone),
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             MainButtons(
                 label: "With Code",
                 onPress: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (builder) => CodeGenerator()));
+                      MaterialPageRoute(builder: (builder) => const CodeGenerator()));
                 },
-                icon: Icon(Icons.code_rounded))
+                icon: const Icon(Icons.code_rounded))
           ],
         ),
       )),
